@@ -1,0 +1,10 @@
+commands:
+  seasonaltasks:
+    description: Main SeasonalTasks command
+    usage: /<command>
+    aliases: [stasks, st]
+permissions:
+  seasonaltasks.use:
+    default: true
+  seasonaltasks.admin:
+    default: op
