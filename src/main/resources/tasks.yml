@@ -1,0 +1,9 @@
+tasks:
+  mine_blocks:
+    name: "Mine Master"
+    type: "BLOCKS_MINED"
+    target: 5000000
+    reward:
+      type: command
+      value: "give %player% diamond 64"
+    message: "&aYou completed the seasonal task: &eMine Master!"

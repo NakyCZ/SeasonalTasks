@@ -1,0 +1,17 @@
+menu:
+  title: "&6&lSeasonal Tasks"
+  size: 54
+  fill-empty: true
+  filler-item:
+    material: GRAY_STAINED_GLASS_PANE
+    name: " "
+  tasks:
+    slot-layout: [10,11,12,13,14,15]
+    task-item:
+      material: DIAMOND_PICKAXE
+      name: "&b{task_name}"
+      lore:
+        - "&7Type: &f{task_type}"
+        - "&7Progress: &f{current}/{target}"
+        - "&7Reward: &f{reward}"
+        - "{status}"

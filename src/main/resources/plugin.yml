@@ -1,0 +1,14 @@
+name: SeasonalTasks
+main: me.yourname.seasonaltasks.SeasonalTasks
+version: 1.0
+api-version: 1.21
+commands:
+  seasonaltasks:
+    description: Seasonal task system
+    usage: /<command>
+    aliases: [st, stasks]
+permissions:
+  seasonaltasks.use:
+    default: true
+  seasonaltasks.admin:
+    default: op
