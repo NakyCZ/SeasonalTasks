@@ -1,10 +1,10 @@
-package me.yourname.seasonaltasks;
+package me.jacob.seasonaltasks;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import me.yourname.seasonaltasks.command.SeasonalTasksCommand;
-import me.yourname.seasonaltasks.data.DataHandler;
-import me.yourname.seasonaltasks.task.TaskManager;
-import me.yourname.seasonaltasks.listener.BlockListener;
+import me.jacob.seasonaltasks.command.SeasonalTasksCommand;
+import me.jacob.seasonaltasks.data.DataHandler;
+import me.jacob.seasonaltasks.task.TaskManager;
+import me.jacob.seasonaltasks.listener.BlockListener;
 
 public class SeasonalTasks extends JavaPlugin {
 
