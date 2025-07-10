@@ -5,6 +5,21 @@ menu:
   filler-item:
     material: GRAY_STAINED_GLASS_PANE
     name: " "
+  info-items:
+    - slot: 4
+      material: NETHER_STAR
+      name: "&e&lSeasonal Tasks"
+      lore:
+        - "&7Complete tasks to earn rewards!"
+        - "&7Tasks reset every season."
+        - ""
+        - "&aGood luck!"
+    - slot: 49
+      material: BOOK
+      name: "&b&lInformation"
+      lore:
+        - "&7Need help? Contact an admin!"
+        - "&7Discord: discord.gg/yourserver"
   tasks:
     slot-layout: [10,11,12,13,14,15]
     task-item:

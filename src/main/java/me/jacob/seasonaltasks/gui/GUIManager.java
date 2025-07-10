@@ -11,6 +11,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -37,6 +38,22 @@ public class GUIManager {
                 config.getString("menu.filler-item.name", " ")
             );
             for (int i = 0; i < size; i++) gui.setItem(i, filler);
+        }
+
+        // Add information items
+        if (config.contains("menu.info-items")) {
+            for (Object obj : config.getList("menu.info-items", new ArrayList<>())) {
+                if (obj instanceof Map<?, ?> infoMap) {
+                    int slot = (Integer) infoMap.get("slot");
+                    String material = (String) infoMap.get("material");
+                    String name = (String) infoMap.get("name");
+                    @SuppressWarnings("unchecked")
+                    List<String> lore = (List<String>) infoMap.get("lore");
+                    
+                    ItemStack infoItem = createInfoItem(material, name, lore);
+                    gui.setItem(slot, infoItem);
+                }
+            }
         }
 
         List<Integer> slots = config.getIntegerList("menu.tasks.slot-layout");
@@ -81,6 +98,23 @@ public class GUIManager {
         if (meta != null) {
             meta.setDisplayName(name);
             meta.setLore(lore);
+            item.setItemMeta(meta);
+        }
+        return item;
+    }
+
+    private ItemStack createInfoItem(String materialName, String name, List<String> lore) {
+        Material material = Material.getMaterial(materialName);
+        if (material == null) material = Material.STONE;
+        
+        ItemStack item = new ItemStack(material);
+        ItemMeta meta = item.getItemMeta();
+        if (meta != null) {
+            meta.setDisplayName(color(name));
+            if (lore != null) {
+                List<String> coloredLore = lore.stream().map(this::color).toList();
+                meta.setLore(coloredLore);
+            }
             item.setItemMeta(meta);
         }
         return item;
