@@ -18,5 +18,9 @@ public class BlockListener implements Listener {
         if (event.getPlayer().hasPermission("seasonaltasks.use")) {
             plugin.getDataHandler().incrementBlocksMined(event.getPlayer(), 1);
         }
+        
+        // Check if any tasks should be completed after incrementing
+        int currentBlocks = plugin.getDataHandler().getBlocksMined(event.getPlayer().getUniqueId());
+        plugin.getTaskManager().checkTaskCompletion(event.getPlayer(), currentBlocks);
     }
 }
