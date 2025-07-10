@@ -1,5 +1,5 @@
 name: SeasonalTasks
-main: me.yourname.seasonaltasks.SeasonalTasks
+main: me.jacob.seasonaltasks.SeasonalTasks
 version: 1.0
 api-version: 1.21
 commands:
