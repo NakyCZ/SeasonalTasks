@@ -2,6 +2,7 @@ package me.jacob.seasonaltasks.data;
 
 import me.jacob.seasonaltasks.SeasonalTasks;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 import java.io.File;
@@ -73,6 +74,10 @@ public class DataHandler {
     }
 
     public boolean hasCompleted(Player player, String taskId) {
+        return hasCompleted((OfflinePlayer) player, taskId);
+    }
+
+    public boolean hasCompleted(OfflinePlayer player, String taskId) {
         UUID uuid = player.getUniqueId();
         if (useMySQL) {
             try (Connection conn = plugin.getMySQLManager().getConnection()) {
@@ -93,6 +98,10 @@ public class DataHandler {
     }
 
     public void markCompleted(Player player, String taskId) {
+        markCompleted((OfflinePlayer) player, taskId);
+    }
+
+    public void markCompleted(OfflinePlayer player, String taskId) {
         UUID uuid = player.getUniqueId();
         if (useMySQL) {
             try (Connection conn = plugin.getMySQLManager().getConnection()) {
