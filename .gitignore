@@ -7,3 +7,4 @@
 /config.yml
 /tasks.yml
 /gui.yml
+.env
